@@ -1,0 +1,48 @@
+.navbar {
+  box-sizing: border-box;
+  height: 80px;
+  padding: 1.5rem 12vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: transparent;
+  box-shadow: 1px 5px 20px -4px rgba(184, 184, 184, 0.72);
+  -webkit-box-shadow: 1px 5px 20px -4px rgba(184, 184, 184, 0.72);
+  -moz-box-shadow: 1px 5px 20px -4px rgba(184, 184, 184, 0.72);
+  .wrapper-link {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    .btn-link {
+      position: relative;
+      text-decoration: none;
+      font-weight: 600;
+      color: #ba9100;
+      padding-bottom: 0.9rem;
+      &:hover {
+        color: #daab01;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          width: 6px;
+          height: 6px;
+          background-color: #ba9100;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  svg {
+    width: 25px;
+    height: 25px;
+    color: #ba9100;
+  }
+}
