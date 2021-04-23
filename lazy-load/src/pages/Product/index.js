@@ -1,38 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { Layout, Card } from "../../components";
-import Axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { SetImage } from "../../store/action/ImagesAction";
+import { Layout } from "../../components";
+import { CardImages } from "../../components/Card";
 import { WrapperContent } from "./style";
-const Product = () => {
-  const [images, setImages] = useState([]);
+import { ImagesLoad } from "../../components/Loading";
 
-  const getDataImages = () => {
-    Axios.get(
-      "https://api.unsplash.com/photos/random?client_id=HY3bA7YKl4ymtkMR6RpaDV0pXD7HIYFtLoG396lTFY4",
-      {
-        params: {
-          count: 30,
-          orientation: "portrait",
-        },
-      }
-    )
-      .then((res) => setImages(res.data))
-      .catch((err) => console.log(err));
-  };
+const Product = () => {
+  const imagesData = useSelector((state) => state.ImagesReducer.image);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getDataImages();
+    dispatch(SetImage());
   }, []);
-  console.log(images);
   return (
     <Layout>
       <WrapperContent>
-        {images?.map((item) => (
-          <Card
-            key={item.id}
-            alt={item.alt_description}
-            src={item.urls.thumb}
-          />
-        ))}
+        {imagesData.length !== 0
+          ? imagesData.map((item) => (
+              <CardImages
+                key={item.id}
+                alt={item.alt_description}
+                src={item.urls.thumb}
+              />
+            ))
+          : [1, 2, 3, 4].map((item) => <ImagesLoad />)}
       </WrapperContent>
     </Layout>
   );

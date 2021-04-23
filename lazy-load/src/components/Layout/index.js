@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import { Section } from "./style";
 
 const MainLayout = ({ children }) => {

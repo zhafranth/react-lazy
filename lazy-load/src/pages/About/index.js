@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "../../components";
 
 const About = () => {
-  return <Layout>Hello from About ...</Layout>;
+  return <Layout></Layout>;
 };
 
 export default About;

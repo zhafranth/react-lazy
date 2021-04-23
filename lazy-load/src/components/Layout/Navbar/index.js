@@ -6,7 +6,9 @@ import { IoLogoGithub } from "react-icons/io";
 const index = () => {
   return (
     <div className="navbar">
-      <IoLogoGithub />
+      <Link to="/">
+        <IoLogoGithub />
+      </Link>
       <ul className="wrapper-link">
         <li>
           <Link to="/" className="btn-link">
@@ -16,6 +18,11 @@ const index = () => {
         <li>
           <Link to="/about" className="btn-link">
             About
+          </Link>
+        </li>
+        <li>
+          <Link to="/news" className="btn-link">
+            News
           </Link>
         </li>
         <li>
