@@ -1,2 +1,3 @@
 import CardImages from "./CardImages";
-export { CardImages };
+import CardNews from "./CardNews";
+export { CardImages, CardNews };
